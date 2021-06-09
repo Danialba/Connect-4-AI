@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="600.0" prefWidth="860.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.GameController">
+   <children>
+      <Pane fx:id="rightPane" layoutX="700.0" prefHeight="600.0" prefWidth="160.0">
+         <children>
+            <Button fx:id="onePlayer" mnemonicParsing="false" onMouseReleased="#handle1Player" prefHeight="100.0" prefWidth="160.0" text="ONE PLAYER" visible="false" />
+            <Button fx:id="twoPlayer" layoutY="100.0" mnemonicParsing="false" onMouseReleased="#handle2Player" prefHeight="100.0" prefWidth="160.0" text="TWO PLAYER" visible="false" />
+            <Button fx:id="easy" mnemonicParsing="false" onMouseReleased="#handleEasy" prefHeight="100.0" prefWidth="160.0" text="EASY" visible="false" />
+            <Button fx:id="medium" layoutY="100.0" mnemonicParsing="false" onMouseReleased="#handleMedium" prefHeight="100.0" prefWidth="160.0" text="MEDIUM" visible="false" />
+            <Button fx:id="hard" layoutY="200.0" mnemonicParsing="false" onMouseReleased="#handleHard" prefHeight="100.0" prefWidth="160.0" text="HARD" visible="false" />
+            <Button fx:id="resetGame" layoutY="500.0" mnemonicParsing="false" onMouseReleased="#resetGameClicked" prefHeight="100.0" prefWidth="160.0" text="RESET GAME" visible="false" />
+            <Text fx:id="yellowStart" fill="#ffd000" layoutX="23.0" layoutY="350.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" text="YELLOW STARTS!" textAlignment="CENTER" visible="false" wrappingWidth="113.53759765625">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Text>
+            <Text fx:id="youStart" fill="#ffd000" layoutX="23.0" layoutY="350.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" text="YOU START!" textAlignment="CENTER" visible="false" wrappingWidth="113.53759765625">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Text>
+            <Button fx:id="showHighscores" layoutY="400.0" mnemonicParsing="false" onAction="#handleHighScores" prefHeight="100.0" prefWidth="160.0" text="HIGHSCORES" visible="false" />
+         </children>
+      </Pane>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="CORNFLOWERBLUE" height="600.0" stroke="BLACK" strokeType="INSIDE" width="700.0" />
+      <Pane fx:id="boardPane" prefHeight="600.0" prefWidth="700.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="160.0" AnchorPane.topAnchor="0.0" />
+      <Pane fx:id="paneInFront" prefHeight="600.0" prefWidth="700.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="161.0" AnchorPane.topAnchor="0.0" />
+      <Pane fx:id="paneWithCols" layoutX="219.0" layoutY="154.0" prefHeight="600.0" prefWidth="700.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="161.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <GridPane blendMode="MULTIPLY" prefHeight="600.0" prefWidth="700.0">
+              <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Button fx:id="col0" alignment="TOP_LEFT" mnemonicParsing="false" onMouseReleased="#col0Chosen" prefHeight="600.0" prefWidth="100.0" visible="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                  <Button fx:id="col1" alignment="TOP_LEFT" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onMouseReleased="#col1Chosen" prefHeight="600.0" prefWidth="100.0" GridPane.columnIndex="1" />
+                  <Button fx:id="col2" alignment="TOP_LEFT" layoutX="110.0" layoutY="10.0" mnemonicParsing="false" onMouseReleased="#col2Chosen" prefHeight="600.0" prefWidth="100.0" GridPane.columnIndex="2" />
+                  <Button fx:id="col3" alignment="TOP_LEFT" layoutX="210.0" layoutY="10.0" mnemonicParsing="false" onMouseReleased="#col3Chosen" prefHeight="600.0" prefWidth="100.0" GridPane.columnIndex="3" />
+                  <Button fx:id="col4" alignment="TOP_LEFT" layoutX="310.0" layoutY="10.0" mnemonicParsing="false" onMouseReleased="#col4Chosen" prefHeight="600.0" prefWidth="100.0" GridPane.columnIndex="4" />
+                  <Button fx:id="col5" alignment="TOP_LEFT" layoutX="410.0" layoutY="10.0" mnemonicParsing="false" onMouseReleased="#col5Chosen" prefHeight="600.0" prefWidth="100.0" GridPane.columnIndex="5" />
+                  <Button fx:id="col6" alignment="TOP_LEFT" layoutX="510.0" layoutY="10.0" mnemonicParsing="false" onMouseReleased="#col6Chosen" prefHeight="600.0" prefWidth="100.0" GridPane.columnIndex="6" />
+               </children>
+            </GridPane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
